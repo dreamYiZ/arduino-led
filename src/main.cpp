@@ -4,13 +4,18 @@
 // int myFunction(int, int);
 
 int LED_PIN = 10;
+int LED_PIN_2 = 9;
+int LED_PIN_3 = 8;
 
+int DELAY_MS = 200 * 5;
 
 void setup() {
   // put your setup code here, to run once:
   // int result = myFunction(2, 3);
 
   pinMode(LED_PIN, OUTPUT);
+  pinMode(LED_PIN_2, OUTPUT);
+  pinMode(LED_PIN_3, OUTPUT);
 
 }
 
@@ -18,9 +23,21 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   digitalWrite(LED_PIN, HIGH);
-  delay(1000);
+  delay(DELAY_MS);
   digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  delay(DELAY_MS);
+
+
+  digitalWrite(LED_PIN_2, HIGH);
+  delay(DELAY_MS);
+  digitalWrite(LED_PIN_2, LOW);
+  delay(DELAY_MS);
+
+  digitalWrite(LED_PIN_3, HIGH);
+  delay(DELAY_MS);
+  digitalWrite(LED_PIN_3, LOW);
+  delay(DELAY_MS);
+
   Serial.println("Loop Completed");
 }
 
