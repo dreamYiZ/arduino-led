@@ -7,6 +7,14 @@ int LED_PIN = 10;
 int LED_PIN_2 = 9;
 int LED_PIN_3 = 8;
 
+int pin_array[3] = {
+    LED_PIN,
+    LED_PIN_2,
+    LED_PIN_3,
+};
+
+int current_pin = 0;
+
 // int DELAY_MS = 200 * 5;
 
 // void setup() {
@@ -118,8 +126,20 @@ void loop()
     }
 
     // set the LED with the ledState of the variable:
-    digitalWrite(LED_PIN, ledState);
-    digitalWrite(LED_PIN_2, ledState);
-    digitalWrite(LED_PIN_3, ledState);
+    digitalWrite(pin_array[current_pin], ledState);
+
+    if (ledState == LOW)
+    {
+      if (current_pin < (sizeof(pin_array) / sizeof(pin_array[current_pin]) - 1))
+      {
+        current_pin++;
+      }
+      else
+      {
+        current_pin = 0;
+      }
+    }
+    // digitalWrite(LED_PIN_2, ledState);
+    // digitalWrite(LED_PIN_3, ledState);
   }
 }
