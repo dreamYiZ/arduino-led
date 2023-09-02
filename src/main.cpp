@@ -17,6 +17,8 @@ void setup() {
   pinMode(LED_PIN_2, OUTPUT);
   pinMode(LED_PIN_3, OUTPUT);
 
+  Serial.begin(9600);
+
 }
 
 void loop() {
@@ -26,6 +28,7 @@ void loop() {
   delay(DELAY_MS);
   digitalWrite(LED_PIN, LOW);
   delay(DELAY_MS);
+
 
 
   digitalWrite(LED_PIN_2, HIGH);
@@ -38,6 +41,10 @@ void loop() {
   digitalWrite(LED_PIN_3, LOW);
   delay(DELAY_MS);
 
+  int sensorValue = analogRead(A0);
+  // print out the value you read:
+  Serial.println(sensorValue);
+  
   Serial.println("Loop Completed");
 }
 
